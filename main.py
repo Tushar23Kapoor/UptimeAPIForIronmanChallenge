@@ -16,6 +16,7 @@ class TimeFetcher(Resource):
         try:
             timediff = current_date_time - marathon_start_date
             timediff = timediff - timedelta(minutes=3, seconds=27) # time lost due to restart not happening at the 48hr mark on July 18 2022
+            timediff = timediff - timedelta(minutes=1, seconds=55) # time lost due to leaking IP and restarting stream on July 18 2022
         except Exception:
             result = make_response('API unavailable, contact @Potterapple')
         
